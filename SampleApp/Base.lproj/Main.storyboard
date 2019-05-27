@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="br1-gZ-EB5">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Top View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TopViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pHJ-pQ-qLV">
+                                <rect key="frame" x="88" y="164" width="199" height="30"/>
+                                <state key="normal" title="テキスト保存・読出サンプル"/>
+                                <connections>
+                                    <segue destination="9Le-WE-lyg" kind="show" id="WY2-au-K9i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEF-d1-Gfq">
+                                <rect key="frame" x="95.5" y="214" width="184" height="30"/>
+                                <state key="normal" title="センサデータ取得サンプル"/>
+                                <connections>
+                                    <segue destination="5k4-Ys-JdD" kind="show" id="wO9-PY-cOp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wn-mu-n7M">
+                                <rect key="frame" x="99.5" y="264" width="176" height="48"/>
+                                <state key="normal">
+                                    <string key="title">APIへのアクセスサンプル
+</string>
+                                </state>
+                                <connections>
+                                    <segue destination="pSK-46-EYA" kind="show" id="LM6-9s-JZ6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qEF-d1-Gfq" firstAttribute="top" secondItem="pHJ-pQ-qLV" secondAttribute="bottom" constant="20" id="VaP-hw-eWT"/>
+                            <constraint firstItem="pHJ-pQ-qLV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="a4q-zV-7f8"/>
+                            <constraint firstItem="pHJ-pQ-qLV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aoN-2F-Atj"/>
+                            <constraint firstItem="6Wn-mu-n7M" firstAttribute="top" secondItem="qEF-d1-Gfq" secondAttribute="bottom" constant="20" id="mnn-wf-2Kb"/>
+                            <constraint firstItem="6Wn-mu-n7M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xfE-MO-GMJ"/>
+                            <constraint firstItem="qEF-d1-Gfq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yeQ-cJ-8Xg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pjj-pU-3it"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="255" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VOe-U8-lCu">
+            <objects>
+                <navigationController id="br1-gZ-EB5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T12-cq-8xU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="8cx-w0-ynk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgT-no-ZwD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-447" y="134"/>
+        </scene>
+        <!--Sensor Sample View Controller-->
+        <scene sceneID="1Gl-Rl-vVv">
+            <objects>
+                <viewController id="5k4-Ys-JdD" customClass="SensorSampleViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cff-LX-OaY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7r-i0-XoA">
+                                <rect key="frame" x="141.5" y="164" width="92" height="30"/>
+                                <state key="normal" title="位置情報取得"/>
+                                <connections>
+                                    <action selector="getLocationButtonTapped:" destination="5k4-Ys-JdD" eventType="touchUpInside" id="q1m-M6-pTS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="緯度: -, 経度: -" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-jk-vMn">
+                                <rect key="frame" x="131.5" y="214" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d0S-jk-vMn" firstAttribute="top" secondItem="l7r-i0-XoA" secondAttribute="bottom" constant="20" id="OGz-S2-z55"/>
+                            <constraint firstItem="l7r-i0-XoA" firstAttribute="centerX" secondItem="Cff-LX-OaY" secondAttribute="centerX" id="fek-vZ-Jca"/>
+                            <constraint firstItem="d0S-jk-vMn" firstAttribute="centerX" secondItem="Cff-LX-OaY" secondAttribute="centerX" id="h01-VT-0ir"/>
+                            <constraint firstItem="l7r-i0-XoA" firstAttribute="top" secondItem="J9u-DL-WJZ" secondAttribute="top" constant="100" id="lQR-hS-E1X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J9u-DL-WJZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="d0S-jk-vMn" id="oWS-RW-EmC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OZL-51-rXN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="346"/>
+        </scene>
+        <!--Api Sample View Controller-->
+        <scene sceneID="fD9-v1-1Rr">
+            <objects>
+                <viewController id="pSK-46-EYA" customClass="ApiSampleViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vDS-QY-o8Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天気: - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ip-4s-ix1">
+                                <rect key="frame" x="159.5" y="214" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6HM-3W-mrm">
+                                <rect key="frame" x="149" y="164" width="77" height="30"/>
+                                <state key="normal" title="お天気取得"/>
+                                <connections>
+                                    <action selector="getWeatherButtonTapped:" destination="pSK-46-EYA" eventType="touchUpInside" id="CPF-cI-vcH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6HM-3W-mrm" firstAttribute="top" secondItem="FUu-l0-1o8" secondAttribute="top" constant="100" id="esI-cx-JYx"/>
+                            <constraint firstItem="6HM-3W-mrm" firstAttribute="centerX" secondItem="vDS-QY-o8Y" secondAttribute="centerX" id="mgx-CS-zv2"/>
+                            <constraint firstItem="5ip-4s-ix1" firstAttribute="top" secondItem="6HM-3W-mrm" secondAttribute="bottom" constant="20" id="pgV-6n-l3N"/>
+                            <constraint firstItem="5ip-4s-ix1" firstAttribute="centerX" secondItem="vDS-QY-o8Y" secondAttribute="centerX" id="tcq-N6-QgG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FUu-l0-1o8"/>
+                    </view>
+                    <connections>
+                        <outlet property="weatherLabel" destination="5ip-4s-ix1" id="pkU-YL-WjL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jMX-HM-jsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="1128"/>
+        </scene>
+        <!--Save And Read Sample View Controller-->
+        <scene sceneID="gtd-b1-m4c">
+            <objects>
+                <viewController id="9Le-WE-lyg" customClass="SaveAndReadSampleViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OyX-74-Xvy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flN-iV-axL">
+                                <rect key="frame" x="156.5" y="164" width="62" height="30"/>
+                                <state key="normal" title="読み込み"/>
+                                <connections>
+                                    <action selector="readButtonTapped:" destination="9Le-WE-lyg" eventType="touchUpInside" id="QrT-J0-dr7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qd9-k1-r7I">
+                                <rect key="frame" x="172" y="214" width="31" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="9Le-WE-lyg" eventType="touchUpInside" id="wAT-R3-3Te"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="ここにテキストを入力" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ITI-VN-V6R">
+                                <rect key="frame" x="20" y="264" width="335" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="RGh-To-F7s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Qd9-k1-r7I" firstAttribute="centerX" secondItem="OyX-74-Xvy" secondAttribute="centerX" id="4Pk-Pa-TGS"/>
+                            <constraint firstItem="flN-iV-axL" firstAttribute="centerX" secondItem="OyX-74-Xvy" secondAttribute="centerX" id="IIv-MN-rBt"/>
+                            <constraint firstItem="ITI-VN-V6R" firstAttribute="centerX" secondItem="OyX-74-Xvy" secondAttribute="centerX" id="dER-1V-hRv"/>
+                            <constraint firstItem="flN-iV-axL" firstAttribute="top" secondItem="ErT-Ud-Ek8" secondAttribute="top" constant="100" id="e1z-CR-oUS"/>
+                            <constraint firstItem="ErT-Ud-Ek8" firstAttribute="trailing" secondItem="ITI-VN-V6R" secondAttribute="trailing" constant="20" id="iQR-kv-lL9"/>
+                            <constraint firstItem="ITI-VN-V6R" firstAttribute="leading" secondItem="ErT-Ud-Ek8" secondAttribute="leading" constant="20" id="pe0-R1-Ffa"/>
+                            <constraint firstItem="ITI-VN-V6R" firstAttribute="top" secondItem="Qd9-k1-r7I" secondAttribute="bottom" constant="20" id="qUC-eu-uvc"/>
+                            <constraint firstItem="Qd9-k1-r7I" firstAttribute="top" secondItem="flN-iV-axL" secondAttribute="bottom" constant="20" id="yVH-AH-p7J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ErT-Ud-Ek8"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="ITI-VN-V6R" id="UfM-b6-hkp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lmI-bV-gzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="-375"/>
+        </scene>
+    </scenes>
+</document>
