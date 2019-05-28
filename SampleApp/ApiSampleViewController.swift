@@ -30,12 +30,21 @@ class ApiSampleViewController: UIViewController {
         let cntOption = "&cnt=14"
         let idOption = "&APPID=542ffd081e67f4512b705f89d2a611b2"
         let requestUrl = baseUrl + gpsOption + modeOption + cntOption + idOption
-        
+        // http://api.openweathermap.org/data/2.5/forecast?lat=34.7326198&lon=135.73401450000006&mode=json&cnt=14&APPID=542ffd081e67f4512b705f89d2a611b2
         // requestUrlに対してリクエストする
+        
+        
         Alamofire.request(requestUrl, method: .get)
             .responseJSON { response in
                 // リクエストした結果が
-                let json = JSON(response.result.value)
+                
+                
+                if response.result.isSuccess {
+                    
+                } else {
+                    
+                }
+                let json = JSON()
                 print(json)
                 self.weatherLabel.text = "お天気： \(json["list"][0]["weather"][0]["main"])"
                 // Question2 ここに実装
