@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="br1-gZ-EB5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pSK-46-EYA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -136,10 +136,18 @@
                                     <action selector="getWeatherButtonTapped:" destination="pSK-46-EYA" eventType="touchUpInside" id="CPF-cI-vcH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="気温: - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSc-qc-xrB">
+                                <rect key="frame" x="159.5" y="265" width="56" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uSc-qc-xrB" firstAttribute="top" secondItem="5ip-4s-ix1" secondAttribute="bottom" constant="30" id="GbR-7y-QJN"/>
                             <constraint firstItem="6HM-3W-mrm" firstAttribute="top" secondItem="FUu-l0-1o8" secondAttribute="top" constant="100" id="esI-cx-JYx"/>
+                            <constraint firstItem="uSc-qc-xrB" firstAttribute="centerX" secondItem="vDS-QY-o8Y" secondAttribute="centerX" id="j5m-47-LU8"/>
                             <constraint firstItem="6HM-3W-mrm" firstAttribute="centerX" secondItem="vDS-QY-o8Y" secondAttribute="centerX" id="mgx-CS-zv2"/>
                             <constraint firstItem="5ip-4s-ix1" firstAttribute="top" secondItem="6HM-3W-mrm" secondAttribute="bottom" constant="20" id="pgV-6n-l3N"/>
                             <constraint firstItem="5ip-4s-ix1" firstAttribute="centerX" secondItem="vDS-QY-o8Y" secondAttribute="centerX" id="tcq-N6-QgG"/>
@@ -147,12 +155,72 @@
                         <viewLayoutGuide key="safeArea" id="FUu-l0-1o8"/>
                     </view>
                     <connections>
+                        <outlet property="temperatureLabel" destination="uSc-qc-xrB" id="S1D-qw-dRm"/>
                         <outlet property="weatherLabel" destination="5ip-4s-ix1" id="pkU-YL-WjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMX-HM-jsV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1038" y="1128"/>
+        </scene>
+        <!--Weather Clock View Controller-->
+        <scene sceneID="jF4-cH-DBn">
+            <objects>
+                <viewController id="3oR-Q6-5yn" customClass="WeatherClockViewController" customModule="SampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iTS-IV-Ga8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Ek8-xP-UYA">
+                                <rect key="frame" x="20" y="202" width="335" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="580640260.41693401">
+                                    <!--2019-05-27 08:57:40 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天候： 取得中 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfA-2E-N3p">
+                                <rect key="frame" x="131" y="161" width="113" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="位置情報：取得中 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6Y-fo-cj4">
+                                <rect key="frame" x="116" y="120" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvI-xv-ISU">
+                                <rect key="frame" x="164.5" y="438" width="46" height="30"/>
+                                <state key="normal" title="セット"/>
+                                <connections>
+                                    <action selector="setButtonTapped:" destination="3oR-Q6-5yn" eventType="touchUpInside" id="Mtm-gE-Szu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ek8-xP-UYA" firstAttribute="top" secondItem="tfA-2E-N3p" secondAttribute="bottom" constant="20" id="3S6-tC-aOH"/>
+                            <constraint firstItem="tiI-i9-jl4" firstAttribute="trailing" secondItem="Ek8-xP-UYA" secondAttribute="trailing" constant="20" id="DEI-sK-MES"/>
+                            <constraint firstItem="tfA-2E-N3p" firstAttribute="centerX" secondItem="iTS-IV-Ga8" secondAttribute="centerX" id="IMI-wV-vOy"/>
+                            <constraint firstItem="tfA-2E-N3p" firstAttribute="top" secondItem="w6Y-fo-cj4" secondAttribute="bottom" constant="20" id="KYr-4G-d0A"/>
+                            <constraint firstItem="vvI-xv-ISU" firstAttribute="centerX" secondItem="iTS-IV-Ga8" secondAttribute="centerX" id="Y01-tO-ayQ"/>
+                            <constraint firstItem="w6Y-fo-cj4" firstAttribute="top" secondItem="tiI-i9-jl4" secondAttribute="top" constant="100" id="jnJ-fs-fCN"/>
+                            <constraint firstItem="Ek8-xP-UYA" firstAttribute="leading" secondItem="tiI-i9-jl4" secondAttribute="leading" constant="20" id="tjK-Z8-mcT"/>
+                            <constraint firstItem="vvI-xv-ISU" firstAttribute="top" secondItem="Ek8-xP-UYA" secondAttribute="bottom" constant="20" id="xHm-Ij-lDI"/>
+                            <constraint firstItem="w6Y-fo-cj4" firstAttribute="centerX" secondItem="iTS-IV-Ga8" secondAttribute="centerX" id="zqS-mA-bRx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tiI-i9-jl4"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Ek8-xP-UYA" id="3Lu-q2-YID"/>
+                        <outlet property="locationLabel" destination="w6Y-fo-cj4" id="d3w-Yh-toI"/>
+                        <outlet property="setButton" destination="vvI-xv-ISU" id="gs7-fG-2aV"/>
+                        <outlet property="weatherLabel" destination="tfA-2E-N3p" id="t4o-lN-hRM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTx-pT-1zU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-415" y="1157"/>
         </scene>
         <!--Save And Read Sample View Controller-->
         <scene sceneID="gtd-b1-m4c">
