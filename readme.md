@@ -13,7 +13,7 @@
 1. Terminalを起動
 2. 以下のコマンドを実行
 ```
-git clone https://github.com/rirex5/SampleApp.git
+git clone https://github.com/rirex5/WatherAlarmSample.git
 cd SampleApp
 pod install
 open SampleApp.xcworkspace
