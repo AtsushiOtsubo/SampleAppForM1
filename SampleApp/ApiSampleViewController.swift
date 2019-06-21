@@ -14,7 +14,7 @@ import Alamofire
 import SwiftyJSON
 
 class ApiSampleViewController: UIViewController {
-
+    
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     
@@ -28,30 +28,23 @@ class ApiSampleViewController: UIViewController {
         let gpsOption = "?lat=\(lat)&lon=\(lng)"
         let modeOption = "&mode=json"
         let cntOption = "&cnt=14"
-        let idOption = "&APPID=542ffd081e67f4512b705f89d2a611b2"
+        let idOption = "&APPID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" // OpenWeatherMapのAPIキーをセット
         let requestUrl = baseUrl + gpsOption + modeOption + cntOption + idOption
-        // http://api.openweathermap.org/data/2.5/forecast?lat=34.7326198&lon=135.73401450000006&mode=json&cnt=14&APPID=542ffd081e67f4512b705f89d2a611b2
-        // requestUrlに対してリクエストする
         
-        
+        // requestUrlに対してリクエストを送る
         Alamofire.request(requestUrl, method: .get)
             .responseJSON { response in
-                // リクエストした結果が
-                
-                
-                if response.result.isSuccess {
+                if response.result.isSuccess { // リクエストが成功すれば...
+                    let json = JSON(response.result.value)
+                    print(json)
+                    self.weatherLabel.text = "お天気： \(json["list"][0]["weather"][0]["main"])"
+                    // Question2 ここに実装
                     
                 } else {
-                    
+                    print("Error")
                 }
-                let json = JSON()
-                print(json)
-                self.weatherLabel.text = "お天気： \(json["list"][0]["weather"][0]["main"])"
-                // Question2 ここに実装
-                
         }
     }
-    
 }
 
 // 答え
